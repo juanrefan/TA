@@ -1,0 +1,57 @@
+/* Add this CSS to your existing styles or in an external CSS file */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.w3-modal-content {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-style-1 {
+    flex: 0 0 48%;
+    margin-bottom: 10px;
+}
+
+.field-divided, .field-long, .field-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.field-long {
+    height: 200px; /* Increased height for text area */
+    resize: none;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.required {
+    color: red;
+}

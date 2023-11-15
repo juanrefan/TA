@@ -1,0 +1,59 @@
+RewriteEngine on
+
+ErrorDocument 403 /404.html
+ErrorDocument 403 /404.html
+
+# ########## #
+# AJAX Rules #
+# ########## #
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ajax/system$ ajxsys/ajxsysmng.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ajax/pengguna$ ajxsys/ajxusrmng.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ajax/desa$ ajxsys/ajxdsmng.php [L]
+
+# ############# #
+# Service Rules #
+# ############# #
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^services/system$ webapi/srvsysmng.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^services/pengguna$ webapi/srvusrmng.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^services/desa$ webapi/srvdsmng.php [L]
+
+# ########################### #
+# Main Application Form Rules #
+# ########################### #
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/(.*)/(.*)\.html$ index.php?menu=$1&proses=$2&kode=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/(.*)/(.*)$ index.php?menu=$1&proses=$2&kode=$3 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/(.*)\.html$ index.php?menu=$1&proses=$2 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/(.*)$ index.php?menu=$1&proses=$2 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?menu=$1 [L]
